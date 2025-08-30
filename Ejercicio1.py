@@ -20,5 +20,48 @@ from utiles_es import (
 from colorama import init, Fore, Style
 import sys
 
-edad=pedir_entero("Ingrese numero entero: ")
-nombre_completo=pedir_texto("Ingrese su nombre completo")
+
+nombre_completo = pedir_texto("Ingrese su nombre completo: ")
+edad = pedir_entero("Ingrese su edad: ")
+ingresos_anuales = pedir_float("Ingresos anuales: ")
+
+
+if ingresos_anuales < 500000:
+    impuesto_final = 0
+elif ingresos_anuales < 2000000:
+    impuesto_final = ingresos_anuales * 0.10
+elif ingresos_anuales < 5000000:
+    impuesto_final = ingresos_anuales * 0.20
+else:
+    impuesto_final = ingresos_anuales * 0.35
+
+
+if edad > 65:
+    impuesto_final /= 2
+
+
+print(
+    f'Nombre: {nombre_completo}\n'
+    f'Ingresos anuales: {ingresos_anuales:,.2f}\n'
+    f'Edad: {edad}\n'
+    f'Impuesto final: {impuesto_final:,.2f}'
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
